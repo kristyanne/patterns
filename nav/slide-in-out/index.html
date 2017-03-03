@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Navigation (Slide in/out)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <header>
+            <h1>Site Header</h1>
+
+            <button class="layout__toggle js-panel-toggle">Toggle Navigation</button>
+
+            <div class="layout__panel">
+                <nav>
+                    <ul>
+                        <li><a href="#">Page One</a></li>
+                        <li><a href="#">Page Two</a></li>
+                        <li><a href="#">Page Three</a></li>
+                        <li><a href="#">Page Four</a></li>
+                        <li><a href="#">Page Five</a></li>
+                        <li><a href="#">Page Six</a></li>
+                        <li><a href="#">Page Seven</a></li>
+                        <li><a href="#">Page Eight</a></li>
+                        <li><a href="#">Page Nine</a></li>
+                        <li><a href="#">Page Ten</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </main>
+    </div><!-- /layout -->
+
+    <script>
+    (() => {
+        const btn = document.querySelector('.js-panel-toggle');
+        const cssClass = 'panel-open';
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const open = document.body.classList.contains(cssClass);
+
+            document.body.classList[open ? 'remove' : 'add'](cssClass);
+        });
+    })();
+    </script>
+</body>
+</html>

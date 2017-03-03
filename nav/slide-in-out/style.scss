@@ -1,0 +1,77 @@
+/**
+ * Reset.
+ */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+
+/**
+ * Core.
+ *
+ * 1. The width the panel containing the <nav /> will be.
+ * 2. The position of the panel (left or right).
+ */
+html, body {
+    min-height: 100%;
+}
+
+body.panel-open {
+    overflow: hidden;
+}
+
+$panel-width: 300px; // [1]
+$panel-pos:   right; // [2]
+
+.layout,
+.layout__panel {
+    transition: $panel-pos .3s ease;
+}
+
+.layout {
+    position: relative;
+    #{$panel-pos}: 0;
+
+    body.panel-open & {
+        #{$panel-pos}: $panel-width;
+    }
+}
+
+.layout__panel {
+    background: pink;
+    bottom: 0;
+    position: fixed;
+    #{$panel-pos}: -$panel-width;
+    top: 0;
+    width: $panel-width;
+
+    body.panel-open & {
+        #{$panel-pos}: 0;
+    }
+
+    nav {
+        overflow-y: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.layout__toggle {
+    position: absolute;
+    #{$panel-pos}: 0;
+    top: 0;
+}
