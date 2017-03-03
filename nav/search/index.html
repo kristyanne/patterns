@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Nav (Search)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">Page One</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Page Two</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Page Three</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Page Four</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Page Six</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Page Seven</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Page Eight</a></li>
+                <li class="nav__item"><a href="#" class="nav__link js-search-toggle">Search</a></li>
+            </ul>
+
+            <div class="search js-search">
+                <button class="js-search-toggle">Close Search</button>
+
+                <form action="/" method="get">
+                    <label for="q">Search</label>
+                    <input type="search" name="q" id="q" class="input" />
+                    <button type="submit" name="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+    (() => {
+        const search = document.querySelector('.js-search');
+        const controls = document.querySelectorAll('.js-search-toggle');
+        const cssClass = 'open';
+
+        const toggle = () => {
+            const open = search.classList.contains(cssClass);
+
+            search.classList[open ? 'remove' : 'add'](cssClass);
+        };
+
+        for(let i = 0; i < controls.length; i++) {
+            controls[i].addEventListener('click', (e) => {
+                e.preventDefault();
+
+                toggle();
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

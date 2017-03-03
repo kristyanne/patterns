@@ -1,0 +1,66 @@
+/**
+ * Reset.
+ */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/**
+ * Core.
+ */
+
+.nav {
+    display: inline-block;
+    overflow: hidden;
+    width: auto;
+    position: relative;
+}
+
+.nav__list {
+    background-color: pink;
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav__link {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    color: blue;
+
+    &:hover {
+        background-color: grey;
+    }
+}
+
+.search {
+    background: cyan;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    transition: left .3s ease;
+
+    &.open {
+        left: 0;
+    }
+}
